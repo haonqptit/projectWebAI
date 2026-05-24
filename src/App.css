@@ -15,7 +15,7 @@ html {
   position: relative;
   width: 100%;
   min-height: 100vh;
-  background: url('/bg_map.jpg') no-repeat center center fixed;
+  background: url('/projectWebAI/bg_map.jpg') no-repeat center center fixed;
   background-size: cover;
   overflow: hidden;
 }
@@ -164,7 +164,7 @@ html {
   right: 22%;
   width: 160px;
   height: 160px;
-  background-image: url('/items/bonghoa-removebg-preview.png');
+  background-image: url('/projectWebAI/items/bonghoa-removebg-preview.png');
   transform: rotate(-22deg);
   opacity: 0.7;
 }
@@ -174,7 +174,7 @@ html {
   left: 30%;
   width: 180px;
   height: 180px;
-  background-image: url('/items/hoa2.png');
+  background-image: url('/projectWebAI/items/hoa2.png');
   transform: rotate(14deg);
   opacity: 0.65;
 }
@@ -184,7 +184,7 @@ html {
   left: 38%;
   width: 130px;
   height: 130px;
-  background-image: url('/items/maybay-removebg-preview.png');
+  background-image: url('/projectWebAI/items/maybay-removebg-preview.png');
   transform: rotate(10deg);
   opacity: 0.85;
   filter: drop-shadow(0 6px 10px rgba(74, 44, 34, 0.2));
@@ -320,7 +320,7 @@ html {
   left: -40px;
   width: 180px;
   height: 180px;
-  background-image: url('/items/bonghoa-removebg-preview.png');
+  background-image: url('/projectWebAI/items/bonghoa-removebg-preview.png');
   transform: rotate(-18deg);
 }
 
@@ -329,7 +329,7 @@ html {
   right: -30px;
   width: 200px;
   height: 200px;
-  background-image: url('/items/maybay-removebg-preview.png');
+  background-image: url('/projectWebAI/items/maybay-removebg-preview.png');
   transform: rotate(20deg);
 }
 
@@ -362,7 +362,7 @@ html {
   overflow: visible;
   background:
     linear-gradient(135deg, rgba(255, 255, 255, 0.18), rgba(74, 44, 34, 0.05)),
-    url('/crumpled_paper.png') no-repeat center center;
+    url('/projectWebAI/crumpled_paper.png') no-repeat center center;
   background-size: cover;
   box-shadow: 0 28px 70px rgba(74, 44, 34, 0.28);
   border-radius: 6px;
@@ -419,7 +419,7 @@ html {
   left: -48px;
   width: 104px;
   height: 28px;
-  background: url('/items/Dan.png') no-repeat center / contain;
+  background: url('/projectWebAI/items/Dan.png') no-repeat center / contain;
   opacity: 0.9;
   filter: drop-shadow(0 4px 7px rgba(74, 44, 34, 0.16));
 }
@@ -665,7 +665,7 @@ html {
   width: min(95vw, 1360px);
   background:
     linear-gradient(90deg, rgba(255, 253, 248, 0.12), rgba(108, 75, 49, 0.04)),
-    url('/crumpled_paper.png') no-repeat center center;
+    url('/projectWebAI/crumpled_paper.png') no-repeat center center;
   background-size: cover;
   box-shadow: 0 24px 55px rgba(74, 44, 34, 0.18);
 }
@@ -1132,7 +1132,7 @@ html {
   background: 
     radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.4), transparent 40%),
     radial-gradient(circle at 80% 80%, rgba(229, 176, 185, 0.15), transparent 45%),
-    url('/crumpled_paper.png') no-repeat center center;
+    url('/projectWebAI/crumpled_paper.png') no-repeat center center;
   background-size: cover;
   border-radius: 6px 0 0 6px;
 }
@@ -2073,7 +2073,7 @@ img.linhsheet-doodle--stamp {
   overflow: hidden;
   isolation: isolate;
   color: var(--linh-ink);
-  background: url('/items/BackgroudLeftpage.png') center / cover no-repeat;
+  background: url('/projectWebAI/items/BackgroudLeftpage.png') center / cover no-repeat;
 }
 
 .linh-left-page *,

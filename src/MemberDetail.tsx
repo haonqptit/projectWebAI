@@ -3,35 +3,36 @@ import { useParams, useNavigate } from 'react-router-dom';
 import './App.css';
 
 const MUSIC_SRC = new URL('../music/music.mp3', import.meta.url).href;
+const publicAsset = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\/+/, '')}`;
 
 const ASSET = {
-  flower: '/items/hoa.png',
-  wildflower: '/items/hoa2.png',
-  bow: '/items/CaiNo-removebg-preview.png',
-  tape: '/items/Dan.png',
-  camera: '/items/MayAnh.png',
-  headphones: '/items/Tainghee.png',
-  fish: '/items/ConCa.png',
-  cat: '/items/ConMeo.png',
-  plane: '/items/maybay-removebg-preview.png',
-  building: '/items/Laudai-removebg-preview.png',
-  driedFlower: '/items/hoa.png',
-  growingNote: '/items/Growing.png',
-  statusCard: '/items/Current Status.png',
-  heroBg: '/items/Bg-removebg-preview.png',
+  flower: publicAsset('items/hoa.png'),
+  wildflower: publicAsset('items/hoa2.png'),
+  bow: publicAsset('items/CaiNo-removebg-preview.png'),
+  tape: publicAsset('items/Dan.png'),
+  camera: publicAsset('items/MayAnh.png'),
+  headphones: publicAsset('items/Tainghee.png'),
+  fish: publicAsset('items/ConCa.png'),
+  cat: publicAsset('items/ConMeo.png'),
+  plane: publicAsset('items/maybay-removebg-preview.png'),
+  building: publicAsset('items/Laudai-removebg-preview.png'),
+  driedFlower: publicAsset('items/hoa.png'),
+  growingNote: publicAsset('items/Growing.png'),
+  statusCard: publicAsset('items/Current Status.png'),
+  heroBg: publicAsset('items/Bg-removebg-preview.png'),
 };
 
 const PHOTO = {
-  hero: '/items/link2.png',
-  cafe: '/xedap.jpg',
-  matcha: '/caffe.jpg',
-  hanbok: '/linh5.jpg',
+  hero: publicAsset('items/link2.png'),
+  cafe: publicAsset('xedap.jpg'),
+  matcha: publicAsset('caffe.jpg'),
+  hanbok: publicAsset('linh5.jpg'),
 };
 
 const LOFI_SCENE = {
-  day: '/linh-study-frame-01-day.png',
-  night: '/linh-study-frame-03-night.png',
-  study: '/items/linh-lofi-study-writing.gif',
+  day: publicAsset('linh-study-frame-01-day.png'),
+  night: publicAsset('linh-study-frame-03-night.png'),
+  study: publicAsset('items/linh-lofi-study-writing.gif'),
 };
 
 type LofiTrayItemData = {
@@ -72,7 +73,7 @@ const LOFI_TRAY_ITEMS: LofiTrayItemData[] = [
   {
     id: 'flower',
     label: 'flower',
-    src: '/items/BoHoa.png',
+    src: publicAsset('items/BoHoa.png'),
     top: '42%',
     left: '48%',
     width: 52,
@@ -83,7 +84,7 @@ const LOFI_TRAY_ITEMS: LofiTrayItemData[] = [
   {
     id: 'cat',
     label: 'cat',
-    src: '/items/cat-sleeping.gif',
+    src: publicAsset('items/cat-sleeping.gif'),
     top: '35%',
     left: '66%',
     width: 68,
@@ -432,9 +433,9 @@ const MemberDetail = () => {
                 type="button"
                 className="lofi-cat-button"
                 onClick={handleCatClick}
-                aria-label="sleeping cat"
-              >
-                <img src="/items/cat-sleeping.gif" alt="" draggable={false} />
+              aria-label="sleeping cat"
+            >
+                <img src={publicAsset('items/cat-sleeping.gif')} alt="" draggable={false} />
               </button>
 
               {isStudyMode && (

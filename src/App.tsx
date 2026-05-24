@@ -1,6 +1,8 @@
 import { useNavigate } from 'react-router-dom';
 import './App.css';
 
+const publicAsset = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\/+/, '')}`;
+
 interface Member {
   id: number;
   name: string;
@@ -13,9 +15,9 @@ function App() {
   const navigate = useNavigate();
   
   const membersData: Member[] = [
-    { id: 1, name: "우린", country: "Mongolia", avatar: "/chibi2.jpg", position: { top: '31%', left: '68%' } },
-    { id: 2, name: "린", country: "Viet Nam", avatar: "/chibi1.jpg", position: { top: '53%', left: '73%' } },
-    { id: 3, name: "다리가", country: "Kazakhstan", avatar: "/chibi3.jpg", position: { top: '34%', left: '57%' } }
+    { id: 1, name: "우린", country: "Mongolia", avatar: publicAsset("chibi2.jpg"), position: { top: '31%', left: '68%' } },
+    { id: 2, name: "린", country: "Viet Nam", avatar: publicAsset("chibi1.jpg"), position: { top: '53%', left: '73%' } },
+    { id: 3, name: "다리가", country: "Kazakhstan", avatar: publicAsset("chibi3.jpg"), position: { top: '34%', left: '57%' } }
   ];
 
   return (
