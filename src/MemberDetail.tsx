@@ -229,9 +229,7 @@ const MemberDetail = () => {
   const [isLampOn, setIsLampOn] = useState(true);
   const [isMusicOn, setIsMusicOn] = useState(false);
   const [reaction, setReaction] = useState('');
-  const [catMessage, setCatMessage] = useState('');
   const reactionTimerRef = useRef<ReturnType<typeof window.setTimeout> | null>(null);
-  const catTimerRef = useRef<ReturnType<typeof window.setTimeout> | null>(null);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const sceneSrc = isStudyMode
@@ -246,14 +244,6 @@ const MemberDetail = () => {
       window.clearTimeout(reactionTimerRef.current);
     }
     reactionTimerRef.current = window.setTimeout(() => setReaction(''), 1500);
-  };
-
-  const handleCatClick = () => {
-    setCatMessage('cat is sleeping... ♡');
-    if (catTimerRef.current) {
-      window.clearTimeout(catTimerRef.current);
-    }
-    catTimerRef.current = window.setTimeout(() => setCatMessage(''), 1500);
   };
 
   const handleMusicToggle = () => {
@@ -282,9 +272,6 @@ const MemberDetail = () => {
     return () => {
       if (reactionTimerRef.current) {
         window.clearTimeout(reactionTimerRef.current);
-      }
-      if (catTimerRef.current) {
-        window.clearTimeout(catTimerRef.current);
       }
       audio?.pause();
     };
@@ -429,15 +416,6 @@ const MemberDetail = () => {
                 <span />
               </div>
 
-              <button
-                type="button"
-                className="lofi-cat-button"
-                onClick={handleCatClick}
-              aria-label="sleeping cat"
-            >
-                <img src={publicAsset('items/cat-sleeping.gif')} alt="" draggable={false} />
-              </button>
-
               {isStudyMode && (
                 <span className="lofi-study-status">study mode on ✦</span>
               )}
@@ -445,12 +423,6 @@ const MemberDetail = () => {
               {reaction && (
                 <div className="lofi-reaction-bubble">
                   {reaction}
-                </div>
-              )}
-
-              {catMessage && (
-                <div className="lofi-cat-bubble">
-                  {catMessage}
                 </div>
               )}
 
