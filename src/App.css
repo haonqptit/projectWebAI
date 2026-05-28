@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Caveat:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;600;700;800&family=Patrick+Hand&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Playpen+Sans:wght@400;500;600;700&family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Caveat:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Dancing+Script:wght@600;700&family=Inter:wght@400;600;700;800&family=Patrick+Hand&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Playpen+Sans:wght@400;500;600;700&family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap');
+
 
 body,
 html {
@@ -4147,5 +4149,557 @@ img.linhsheet-doodle--stamp {
 @media (prefers-reduced-motion: reduce) {
   .lofi-tray-item:not(.is-dragging) {
     animation: none;
+  }
+}
+
+/* ============================================================
+   6. DARIGA SCRAPBOOK POSTER PAGE (MEMBER 3)
+   ============================================================ */
+.dariga-page {
+  --dariga-blue: #a2e3ee;
+  --dariga-dark: #631919;
+  --dariga-highlight: #701010;
+
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 10px;
+  background: #7d969e; /* Dark slate background to contrast the poster */
+  background:
+    radial-gradient(circle at 10% 10%, rgba(162, 227, 238, 0.2), transparent 40%),
+    radial-gradient(circle at 90% 90%, rgba(50, 80, 90, 0.3), transparent 50%),
+    #7d969e;
+  font-family: "Caveat Brush", cursive;
+  color: var(--dariga-dark);
+  overflow-x: hidden;
+}
+
+.dariga-back-btn {
+  position: fixed;
+  top: 24px;
+  left: 24px;
+  z-index: 100;
+  border-radius: 999px;
+  border: 2px dashed var(--dariga-dark);
+  background: rgba(255, 253, 247, 0.9);
+  color: var(--dariga-dark);
+  box-shadow: 0 8px 24px rgba(54, 36, 28, 0.15);
+  padding: 10px 20px;
+  font-family: Inter, sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.dariga-back-btn:hover {
+  transform: rotate(-5deg) scale(1.05);
+  background: #ffffff;
+}
+
+.dariga-sheet {
+  position: relative;
+  width: min(95vw, 1000px);
+  aspect-ratio: 1000 / 1414;
+  background:
+    linear-gradient(rgba(162, 227, 238, 0.82), rgba(162, 227, 238, 0.82)),
+    url('/projectWebAI/crumpled_paper.png') no-repeat center center;
+  background-size: cover;
+  box-shadow: 0 28px 70px rgba(28, 48, 54, 0.35);
+  border-radius: 6px;
+  overflow: hidden;
+  user-select: none;
+}
+
+/* --- Decorative Stickers / Doodles --- */
+.dariga-doodle {
+  position: absolute;
+  pointer-events: none;
+  z-index: 10;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.12));
+  transition: transform 0.3s ease;
+}
+
+.dariga-doodle:hover {
+  transform: scale(1.1);
+}
+
+.dariga-doodle--top-left-star {
+  top: -1.5%;
+  left: -4.5%;
+  width: 20%;
+  transform: rotate(-10deg);
+  z-index: 15;
+}
+
+.dariga-doodle--bottom-left-flower {
+  bottom: -4%;
+  left: 5%;
+  width: 25%;
+  transform: rotate(5deg);
+}
+
+.dariga-doodle--left-doodles {
+  top: 20.5%;
+  left: 4.5%;
+  width: 12%;
+  transform: rotate(-4deg);
+  filter: none;
+}
+
+.dariga-doodle--orchid {
+  top: 36%;
+  left: 27.5%;
+  width: 20%;
+  transform: rotate(-5deg);
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.1));
+}
+
+.dariga-doodle--beige-flower {
+  top: 54.5%;
+  left: 26.5%;
+  width: 21%;
+  transform: rotate(15deg);
+}
+
+.dariga-doodle--bottom-right-star {
+  bottom: 4%;
+  right: 5%;
+  width: 14%;
+  transform: rotate(-10deg);
+}
+
+/* --- Inline SVG/Text Doodles --- */
+.dariga-inline-doodle {
+  position: absolute;
+  font-size: 2.2rem;
+  color: var(--dariga-dark);
+  opacity: 0.8;
+  font-family: Arial, sans-serif;
+  user-select: none;
+}
+
+.dariga-inline-doodle--flower {
+  left: 5.5%;
+  top: 21%;
+  transform: rotate(12deg);
+}
+
+.dariga-inline-doodle--star {
+  left: 8.5%;
+  top: 25.5%;
+  font-size: 1.8rem;
+  transform: rotate(-15deg);
+}
+
+/* --- Title Block --- */
+.dariga-collage-title {
+  position: absolute;
+  top: 1.5%;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 6%;
+  z-index: 5;
+}
+
+.dariga-word {
+  display: flex;
+  align-items: center;
+}
+
+.dariga-word--about {
+  gap: -1%;
+}
+
+.dariga-word--me {
+  gap: 2px;
+}
+
+.dariga-letter {
+  --letter-transform: none;
+
+  height: clamp(50px, 7vw, 105px);
+  width: auto;
+  object-fit: contain;
+  opacity: 0;
+  transform: var(--letter-transform);
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.15));
+  transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dariga-page--enter .dariga-letter {
+  animation-name: darigaLetterReveal;
+  animation-duration: 0.72s;
+  animation-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.28);
+  animation-fill-mode: both;
+}
+
+.dariga-letter:hover {
+  transform: scale(1.15) rotate(0deg) !important;
+  z-index: 20;
+}
+
+.dariga-letter--a { --letter-transform: rotate(-5deg) translateY(-2%); animation-delay: 0.05s; }
+.dariga-letter--b { --letter-transform: rotate(8deg) translateY(1%); margin-left: -15px; animation-delay: 0.18s; }
+.dariga-letter--o { --letter-transform: rotate(-12deg) translateY(3%); margin-left: -12px; animation-delay: 0.31s; }
+.dariga-letter--u { --letter-transform: rotate(4deg) translateY(-1%); margin-left: -10px; animation-delay: 0.44s; }
+.dariga-letter--t { --letter-transform: rotate(-6deg) translateY(2%); margin-left: -8px; animation-delay: 0.57s; }
+.dariga-letter--m { --letter-transform: rotate(5deg) translateY(-2%); animation-delay: 0.78s; }
+.dariga-letter--e { --letter-transform: rotate(-15deg) translateY(2%); margin-left: -20px; animation-delay: 0.91s; }
+
+@keyframes darigaLetterReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(-18px) rotate(-8deg) scale(0.72);
+  }
+  68% {
+    opacity: 1;
+    transform: var(--letter-transform) scale(1.08);
+  }
+  100% {
+    opacity: 1;
+    transform: var(--letter-transform);
+  }
+}
+
+/* --- Intro block --- */
+.dariga-intro-block {
+  position: absolute;
+  top: 9%;
+  left: 9%;
+  width: 58%;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  z-index: 4;
+}
+
+.dariga-intro-text {
+  font-family: "Caveat Brush", cursive;
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: 0;
+  text-align: left;
+  opacity: 0;
+}
+
+.dariga-page--enter .dariga-intro-text {
+  animation-name: darigaTextReveal;
+  animation-duration: 0.55s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: both;
+}
+
+.dariga-intro-text--greeting {
+  font-size: clamp(2rem, 3.1vw, 3rem);
+  color: var(--dariga-highlight);
+  margin-bottom: 2px;
+  animation-delay: 1.15s;
+}
+
+.dariga-intro-text--meta {
+  font-size: clamp(1.45rem, 2.35vw, 2.25rem);
+  color: var(--dariga-dark);
+}
+
+.dariga-intro-text--meta:nth-of-type(1) {
+  animation-delay: 1.3s;
+}
+
+.dariga-intro-text--meta:nth-of-type(2) {
+  animation-delay: 1.45s;
+}
+
+.dariga-intro-text--meta:nth-of-type(3) {
+  animation-delay: 1.6s;
+}
+
+.dariga-intro-text--shift-right {
+  margin-left: 24%;
+}
+
+.dariga-highlight {
+  font-weight: inherit;
+  color: var(--dariga-highlight);
+}
+
+/* --- Polaroid Photo Frame --- */
+.dariga-polaroid {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  line-height: 0;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 3;
+  transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.15);
+}
+
+.dariga-page--enter .dariga-polaroid {
+  animation-name: darigaPhotoReveal;
+  animation-duration: 0.82s;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  animation-fill-mode: both;
+}
+
+.dariga-polaroid img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: none;
+}
+
+.dariga-polaroid:hover {
+  transform: scale(1.05) !important;
+  z-index: 30;
+}
+
+@keyframes darigaPhotoReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(18px) scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes darigaTextReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Specific Polaroid coordinates & rotations */
+.dariga-polaroid--canyon {
+  top: 14%;
+  right: 2%;
+  width: 29%;
+  aspect-ratio: 3 / 4;
+  animation-delay: 2.2s;
+}
+
+.dariga-polaroid--valley {
+  top: 27.4%;
+  left: 44.8%;
+  width: 23.5%;
+  aspect-ratio: 9 / 10;
+  animation-delay: 2.4s;
+}
+
+.dariga-polaroid--forest {
+  top: 36.5%;
+  left: 1.7%;
+  width: 24.7%;
+  aspect-ratio: 4 / 5;
+  animation-delay: 2.6s;
+}
+
+.dariga-polaroid--pizza {
+  top: 47.8%;
+  left: 49.2%;
+  width: 19.3%;
+  aspect-ratio: 672 / 998;
+  animation-delay: 2.8s;
+}
+
+.dariga-polaroid--feast {
+  top: 54.9%;
+  right: 6%;
+  width: 20%;
+  aspect-ratio: 49 / 64;
+  animation-delay: 3s;
+}
+
+.dariga-polaroid--beach {
+  top: 59.6%;
+  left: 4.5%;
+  width: 22%;
+  aspect-ratio: 11 / 12;
+  animation-delay: 3.2s;
+}
+
+.dariga-polaroid--cat {
+  top: 75.4%;
+  left: 46.8%;
+  width: 27.6%;
+  aspect-ratio: 579 / 680;
+  animation-delay: 3.4s;
+}
+
+/* --- Cursive Text Cards --- */
+.dariga-text-card {
+  position: absolute;
+  font-family: "Caveat Brush", cursive;
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: 0;
+  color: var(--dariga-highlight);
+  text-align: left;
+  z-index: 5;
+  opacity: 0;
+}
+
+.dariga-page--enter .dariga-text-card {
+  animation-name: darigaTextReveal;
+  animation-duration: 0.55s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: both;
+}
+
+.dariga-text-card h3,
+.dariga-text-card p {
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+}
+
+.dariga-text-card--visited {
+  top: 28.1%;
+  left: 4%;
+  width: 39%;
+  animation-delay: 1.8s;
+}
+.dariga-text-card--visited p {
+  font-size: clamp(1.35rem, 2.05vw, 2rem);
+  color: var(--dariga-dark);
+}
+.dariga-text-card--visited h3 {
+  font-size: clamp(1.55rem, 2.35vw, 2.25rem);
+  color: var(--dariga-highlight);
+}
+
+.dariga-text-card--foods {
+  top: 43.5%;
+  right: 1.5%;
+  width: 29%;
+  animation-delay: 1.95s;
+}
+.dariga-text-card--foods p {
+  font-size: clamp(1.45rem, 2.3vw, 2.2rem);
+  color: var(--dariga-dark);
+}
+.dariga-text-card--foods h3 {
+  font-size: clamp(1.4rem, 2.2vw, 2.1rem);
+  color: var(--dariga-highlight);
+}
+
+.dariga-text-card--animals {
+  top: 78.3%;
+  left: 2.5%;
+  width: 40%;
+  font-size: clamp(1.45rem, 2.25vw, 2.2rem);
+  color: var(--dariga-highlight);
+  animation-delay: 2.1s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dariga-page--enter .dariga-letter,
+  .dariga-page--enter .dariga-polaroid,
+  .dariga-page--enter .dariga-intro-text,
+  .dariga-page--enter .dariga-text-card {
+    animation-name: darigaFadeReveal;
+    animation-duration: 0.45s;
+    animation-timing-function: ease;
+  }
+}
+
+@keyframes darigaFadeReveal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* --- Responsive adjustments --- */
+@media (max-width: 768px) {
+  .dariga-page {
+    padding: 10px 5px;
+  }
+  .dariga-sheet {
+    aspect-ratio: auto;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    padding: 60px 15px 40px;
+    gap: 25px;
+    overflow: visible;
+  }
+
+  .dariga-doodle,
+  .dariga-letter,
+  .dariga-polaroid,
+  .dariga-text-card,
+  .dariga-collage-title,
+  .dariga-intro-block,
+  .dariga-inline-doodle {
+    position: static;
+    transform: none !important;
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+  }
+
+  .dariga-collage-title {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .dariga-word {
+    gap: 5px;
+    justify-content: center;
+  }
+
+  .dariga-letter {
+    height: 45px;
+  }
+
+  .dariga-intro-block {
+    text-align: center;
+    align-items: center;
+  }
+
+  .dariga-intro-text {
+    text-align: center;
+  }
+
+  .dariga-inline-doodle {
+    display: none;
+  }
+
+  .dariga-polaroid {
+    padding: 0;
+    box-shadow: none;
+  }
+
+  .dariga-doodle {
+    max-width: 150px;
+    align-self: center;
+  }
+
+  .dariga-text-card {
+    text-align: center;
   }
 }
