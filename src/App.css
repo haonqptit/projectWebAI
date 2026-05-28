@@ -4630,3 +4630,10 @@ img.linhsheet-doodle--stamp {
     opacity: 1;
   }
 }
+
+@media (max-width: 768px) {
+  .dariga-intro-block > :not(.dariga-intro-text--greeting),
+  .dariga-text-card {
+    display: none !important;
+  }
+}
