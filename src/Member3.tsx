@@ -28,6 +28,29 @@ import darigaSticker11 from '../assetMember2/11-removebg-preview.png';
 import darigaSticker12 from '../assetMember2/12-removebg-preview.png';
 import darigaSticker13 from '../assetMember2/13-removebg-preview.png';
 
+const bucketItems = [
+  { text: 'watch the sunrise at the beach', icon: 'sunrise' },
+  { text: 'have a movie night outside', icon: 'popcorn' },
+  { text: 'go on a beach picnic', icon: 'basket' },
+  { text: 'go thrifting for cute finds', icon: 'bag' },
+  { text: 'take a sunset beach walk', icon: 'sunset' },
+  { text: 'make a summer playlist', icon: 'music' },
+  { text: 'go swimming in the ocean', icon: 'wave' },
+  { text: 'do a beach clean up', icon: 'shell' },
+  { text: 'read a book in the sand', icon: 'book' },
+  { text: 'go on a boat day', icon: 'boat' },
+  { text: "make s'mores at the beach", icon: 'smore' },
+  { text: 'bake something delicious', icon: 'cookie' },
+  { text: 'go paddle boarding or kayaking', icon: 'paddle' },
+  { text: 'have a sleepover', icon: 'pillow' },
+  { text: 'visit a cute coastal town', icon: 'scooter' },
+  { text: 'write in a journal', icon: 'journal' },
+  { text: 'take lots of pictures', icon: 'camera' },
+  { text: 'have a spa day', icon: 'spa' },
+  { text: 'try acai or frozen treats', icon: 'bowl' },
+  { text: 'be present & enjoy the little things', icon: 'rainbow' },
+];
+
 const Member3 = () => {
   const navigate = useNavigate();
   const [isEntering, setIsEntering] = useState(false);
@@ -175,6 +198,50 @@ const Member3 = () => {
           draggable={false}
         />
       </main>
+
+      <section className="dariga-bucket-sheet" aria-labelledby="dariga-bucket-title">
+        <span className="dariga-bucket-sun" aria-hidden="true" />
+        <span className="dariga-bucket-palm" aria-hidden="true">🌴</span>
+        <span className="dariga-bucket-flower dariga-bucket-flower--top" aria-hidden="true">✿</span>
+        <span className="dariga-bucket-doodle dariga-bucket-doodle--star-a" aria-hidden="true">☆</span>
+        <span className="dariga-bucket-doodle dariga-bucket-doodle--star-b" aria-hidden="true">☆</span>
+        <span className="dariga-bucket-doodle dariga-bucket-doodle--heart-a" aria-hidden="true">♡</span>
+        <span className="dariga-bucket-doodle dariga-bucket-doodle--heart-b" aria-hidden="true">♡</span>
+
+        <header className="dariga-bucket-header">
+          <h2 id="dariga-bucket-title" className="dariga-bucket-title" aria-label="summer bucket list">
+            {'summer'.split('').map((letter, index) => (
+              <span key={`${letter}-${index}`} className={`dariga-bucket-title__letter dariga-bucket-title__letter--${index}`}>
+                {letter}
+              </span>
+            ))}
+          </h2>
+          <p className="dariga-bucket-subtitle">bucket list</p>
+          <span className="dariga-bucket-wave-line" aria-hidden="true" />
+        </header>
+
+        <ul className="dariga-bucket-list">
+          {bucketItems.map((item, index) => (
+            <li
+              key={item.text}
+              className={`dariga-bucket-item dariga-bucket-item--tone-${index % 5}`}
+            >
+              <span className="dariga-bucket-check" aria-hidden="true" />
+              <span className="dariga-bucket-item__text">{item.text}</span>
+              <span className={`dariga-bucket-icon dariga-bucket-icon--${item.icon}`} aria-hidden="true" />
+            </li>
+          ))}
+        </ul>
+
+        <footer className="dariga-bucket-footer">
+          <span className="dariga-bucket-surfboard" aria-hidden="true" />
+          <span className="dariga-bucket-shell dariga-bucket-shell--left" aria-hidden="true">✺</span>
+          <p>collect memories, not things ♡</p>
+          <span className="dariga-bucket-coconut" aria-hidden="true" />
+          <span className="dariga-bucket-flower dariga-bucket-flower--bottom" aria-hidden="true">✿</span>
+          <span className="dariga-bucket-water" aria-hidden="true" />
+        </footer>
+      </section>
     </div>
   );
 };
