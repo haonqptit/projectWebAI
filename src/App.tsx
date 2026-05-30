@@ -33,7 +33,7 @@ function App() {
       {/* Polaroid giới thiệu */}
       <div className="intro-card">
         <span className="intro-card__tape" />
-        <p className="intro-card__title">Hi, Đây là team của Linh, và t sẽ sửa sau!</p>
+        <p className="intro-card__title">Hi,</p>
         <p className="intro-card__body">
           Click vào từng chibi trên bản đồ để ghé thăm góc nhỏ của chúng mình nhé ~
         </p>
