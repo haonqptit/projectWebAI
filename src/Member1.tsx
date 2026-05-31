@@ -1,22 +1,33 @@
 import { useNavigate } from 'react-router-dom';
 import './App.css';
 
+import anhVuong from '../Urin/Anhvuong.png';
+import anhTron from '../Urin/anhTron.png';
+
 const Member1 = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="member-focus-page">
-      <button className="back-btn" type="button" onClick={() => navigate('/')}>
+    <div className="urin-page">
+      <button className="urin-back-btn" type="button" onClick={() => navigate('/')}>
         Back to Map
       </button>
-      <div className="postcard-large">
-        <h1>우린 (Urin)</h1>
-        <p style={{ fontStyle: 'italic', color: '#666', margin: '10px 0 20px' }}>From: Mongolia 🇲🇳</p>
-        <p>This is Urin's personal scrapbook page.</p>
-        <p style={{ marginTop: '20px', fontSize: '0.9rem', color: '#888' }}>
-          ✿ Coming soon — edit `src/Member1.tsx` to design this page!
-        </p>
-      </div>
+
+      <section className="urin-poster">
+        <img src={anhVuong} alt="Urin square" className="urin-photo-square" draggable={false} />
+
+        <div className="urin-about">
+          <h2 className="urin-about-title">ABOUT ME</h2>
+          <div className="urin-about-info">
+            <p>From: Mongolia</p>
+            <p>Currently in: South Korea</p>
+          </div>
+        </div>
+
+        <div className="urin-round-photo-wrap">
+          <img src={anhTron} alt="Urin round" className="urin-photo-round" draggable={false} />
+        </div>
+      </section>
     </div>
   );
 };
