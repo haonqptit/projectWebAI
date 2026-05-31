@@ -30,7 +30,7 @@ function App() {
         <span className="nav-logo__caption">— a little world of us ✿</span>
       </header>
 
-      {/* Polaroid giới thiệu */}
+      {/* Polaroid giới thiệu
       <div className="intro-card">
         <span className="intro-card__tape" />
         <p className="intro-card__title">Hi,</p>
@@ -38,7 +38,7 @@ function App() {
           Click vào từng chibi trên bản đồ để ghé thăm góc nhỏ của chúng mình nhé ~
         </p>
         <p className="intro-card__signature">♡ from Việt Nam</p>
-      </div>
+      </div> */}
 
 
       {/* Các vòng tròn thành viên */}
